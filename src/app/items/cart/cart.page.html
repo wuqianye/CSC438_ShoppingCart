@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>cart</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-tabs>
+    <ion-tab-bar slot="bottom">
+      <ion-tab-button [routerLink]="['/items']">
+        <ion-icon name="home"></ion-icon>
+        <ion-label>Home</ion-label>
+      </ion-tab-button>
+
+      <ion-tab-button selected>
+        <ion-icon name="cart"></ion-icon>
+        <ion-label>Cart</ion-label>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+
+  <ion-list>
+    <ion-item *ngFor="let item of cartItems">
+      <ion-avatar slot="start">
+        <ion-img [src]="item.imgUrl"></ion-img>
+      </ion-avatar>
+
+      <ion-label>
+        {{item.title}}
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
